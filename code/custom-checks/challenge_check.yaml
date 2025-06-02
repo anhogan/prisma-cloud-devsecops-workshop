@@ -1,0 +1,15 @@
+metadata:
+ name: "Terraform contains tags, specifically an `Environment` tag"
+ id: "CKV2_TF_2"
+ category: "GENERAL_SECURITY"
+definition:
+ and:
+  - cond_type: "attribute"
+    resource_types: all 
+    attribute: "tags"
+    operator: "exists"
+  - cond_type: "attribute"
+    resource_types: all
+    attribute: "tags"
+    operator: "equals"
+    value: "Environment"
